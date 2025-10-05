@@ -1,0 +1,42 @@
+---
+title: {{ title }}
+date: {{ created_at }}
+source: {{ source_video }}
+---
+
+# {{ title }}
+
+このマニュアルは動画から自動生成されました。
+
+**元動画:** {{ source_video }}
+**作成日時:** {{ created_at }}
+
+---
+
+{% for step in steps %}
+## Step {{ loop.index }}: {{ step.title }}
+
+**ナレーション:**
+{{ step.narration }}
+
+{% if step.note %}
+> **📌 注意:** {{ step.note }}
+{% endif %}
+
+{% if step.image %}
+![Step {{ loop.index }}の画面]({{ step.image }})
+{% endif %}
+
+**時間:** {{ "%.2f"|format(step.start) }}s - {{ "%.2f"|format(step.end) }}s
+
+---
+
+{% endfor %}
+
+## ✅ 完了
+
+以上で操作は完了です。
+
+---
+
+*このマニュアルは Video Manual Generator により自動生成されました。*
