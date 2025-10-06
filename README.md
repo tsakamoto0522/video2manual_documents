@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 # video2manual_documents
 動画からマニュアルを生成
-=======
 # Video Manual Generator
 
 **動画から自動でマニュアルを生成するシステム**
